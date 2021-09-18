@@ -1,0 +1,90 @@
+bottle:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+cable:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+capsule:
+  flip: False
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+carpet:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 45.0
+grid:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: False
+  rotation_degrees: 0.0
+hazelnut:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 45.0
+leather:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 45.0
+metal_nut:
+  flip: False
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+pill:
+  flip: False
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+screw:
+  flip: False
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+tile:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 45.0
+toothbrush:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+transistor:
+  flip: True
+  rotate90: False
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+wood:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0
+zipper:
+  flip: True
+  rotate90: True
+  only_noise: False
+  shift_scale: True
+  rotation_degrees: 15.0

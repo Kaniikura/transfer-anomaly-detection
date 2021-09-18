@@ -1,0 +1,26 @@
+dataset_name: "mvtec"
+seed: 42
+device: "cuda"
+root_path: "./data"
+class_name: "bottle"
+fe_name: "resnet18"
+img_size: 224
+extract_blocks: "0,1,2,3,4"
+estimator_name: "flow"
+estimator_loss: "nf_loss"
+
+# dataloader params
+batch_size: 8
+num_workers: 8
+epochs: 10
+tta: 1
+
+# data augmentation params
+only_noise: False
+
+# trainer params
+gpus: 1
+
+# output settings
+disable_progress_bar: False
+verbose: True

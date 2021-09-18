@@ -1,0 +1,33 @@
+program: main.py
+method: grid
+metric:
+  goal: maximize
+  name: auroc
+parameters:
+  without_background:
+    values: [True]
+  extract_blocks:
+    values: ["0", "1", "2", "3", "4", "5", "6", "0,1,2,3,4,5,6"]
+  img_size:
+    values: ["none", 456]
+  seed:
+    values: [0]
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - "--dataset_name=shanghai"
+  - "--config_path=configs/shanghai.yaml"
+  - "--use_cached_feature"
+  - "--fe_name=efficientnet-b5"
+  - "--reducer_name=none"
+  - "--num_workers=8"
+  - "--batch_size=64"
+  - "--gpus=1"
+  - "--epochs=1"
+  - "--estimator_epochs=1"
+  - "--estimator_loss=nf_loss"
+  - "--estimator_name=flow"
+  - "--progress_bar_refresh_rate=0"
+  - ${args}

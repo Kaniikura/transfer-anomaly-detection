@@ -1,0 +1,55 @@
+program: main.py
+method: grid
+metric:
+  goal: maximize
+  name: auroc
+parameters:
+  class_name:
+    values:
+      [
+        "bottle",
+        "cable",
+        "capsule",
+        "carpet",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper",
+      ]
+  extract_blocks:
+    values: ["0", "1", "2", "3", "4", "0,1,2,3,4"]
+  # cumulative_variance_threshold:
+  #   values: [0.9999, 0.999, 0.99, 0.95, 0.90]
+  # top_n_components:
+  #   values: [50, 100]
+  percentile_components:
+    values: [0.10, 0.20, 0.30, 0.40, 0.50]
+  negated_pca:
+    values: [false, true]
+  n_neighbors:
+    values: [1, 5, 10]
+  seed:
+    values: [0]
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - "--fe_name=resnet18"
+  - "--img_size=224"
+  - "--reducer_name=pca"
+  - "--num_workers=2"
+  - "--batch_size=8"
+  - "--gpus=1"
+  - "--epochs=10"
+  - "--estimator_loss=none"
+  - "--estimator_name=knn"
+  - "--progress_bar_refresh_rate=0"
+  - ${args}

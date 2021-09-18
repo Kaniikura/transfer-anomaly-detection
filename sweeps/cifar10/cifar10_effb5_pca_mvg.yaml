@@ -1,0 +1,36 @@
+program: main.py
+method: grid
+metric:
+  goal: maximize
+  name: auroc
+parameters:
+  one_class:
+    values: ["plane", "car", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
+  extract_blocks:
+    values: ["0", "1", "2", "3", "4", "5", "6", "0,1,2,3,4,5,6"]
+  img_size:
+    values: [456]
+  percentile_components:
+    values: [0.10, 0.20, 0.30, 0.40, 0.50]
+  negated_pca:
+    values: [false, true]
+  seed:
+    values: [0]
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - "--dataset_name=cifar10"
+  - "--config_path=configs/cifar10.yaml"
+  - "--use_cached_feature"
+  - "--fe_name=efficientnet-b5"
+  - "--reducer_name=pca"
+  - "--num_workers=2"
+  - "--batch_size=64"
+  - "--gpus=1"
+  - "--epochs=3"
+  - "--estimator_loss=none"
+  - "--estimator_name=mvg"
+  - "--progress_bar_refresh_rate=0"
+  - ${args}
